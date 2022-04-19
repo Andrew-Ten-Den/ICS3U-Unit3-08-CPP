@@ -22,8 +22,12 @@ int main() {
     try {
         yearNumberAsInt = std::stoi(yearNumberAsString);
         if (yearNumberAsInt % 4 == 0) {
-            if (yearNumberAsInt % 400 == 0) {
-                std::cout << "It is not a leap year";
+            if (yearNumberAsInt % 100 == 0) {
+                if (yearNumberAsInt % 400 == 0) {
+                    std::cout << "It is a leap year";
+                } else {
+                    std::cout << "It is not a leap year";
+                }
             } else {
                 std::cout << "It is a leap year";
             }
@@ -33,5 +37,5 @@ int main() {
     } catch (std::invalid_argument) {
             std::cout << "That is not a year";
     }
-    std::cout << "\nDone." << std::endl;
+    std::cout << "\n\nDone." << std::endl;
 }
